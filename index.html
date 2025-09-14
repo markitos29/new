@@ -226,27 +226,45 @@
                 >
                   <img src="img/instagram.png" alt="Instagram" />
                 </a>
-                <a href="https://wa.me/526141986605" 
+                <!-- Botón flotante de WhatsApp con animación de rebote -->
+<a href="https://wa.me/526141986605" 
    target="_blank" 
    aria-label="WhatsApp" 
-   style="position:fixed;
-          bottom:20px;
-          right:20px;
-          width:60px;
-          height:60px;
-          background-color:#25D366;
-          border-radius:50%;
-          display:flex;
-          justify-content:center;
-          align-items:center;
-          box-shadow:0 4px 6px rgba(0,0,0,0.3);
-          text-decoration:none;
-          z-index:1000;">
-    <i class="fab fa-whatsapp" style="color:white; font-size:30px;"></i>
+   class="whatsapp-bounce">
+    <i class="fab fa-whatsapp"></i>
 </a>
 
 <!-- Font Awesome para el ícono -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+.whatsapp-bounce {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    text-decoration: none;
+    z-index: 1000;
+    color: white;
+    font-size: 30px;
+    animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+    0%   { transform: translateY(-100%); }
+    40%  { transform: translateY(10%); }
+    60%  { transform: translateY(-5%); }
+    80%  { transform: translateY(2%); }
+    100% { transform: translateY(0); }
+}
+</style>
               </div>
             </div>
           </div>
