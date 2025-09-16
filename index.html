@@ -2,13 +2,42 @@
   <html lang="es">
     <!-- Changed lang to es for Spanish -->
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G66KRHQQTT"></script>
+
+<!-- GA4 Global Site Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G66KRHQQTT"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-G66KRHQQTT');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G66KRHQQTT');
 </script>
+
+<script>
+  const boton = document.getElementById('botonWhatsapp');
+
+  // Function to bounce the button
+  function bounceButton() {
+    boton.style.transform = 'scale(1.2)';
+    setTimeout(() => { boton.style.transform = 'scale(1)'; }, 200);
+  }
+
+  // Bounce on page load
+  window.addEventListener('load', bounceButton);
+
+  // Bounce every 20 seconds
+  setInterval(bounceButton, 20000);
+
+  // Rastrear clicks en GA4
+  boton.addEventListener('click', () => {
+    gtag('event', 'click', {
+      'event_category': 'Botón',
+      'event_label': 'WhatsApp'
+    });
+  });
+</script>
+
+
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -233,45 +262,44 @@
                 >
                   <img src="img/instagram.png" alt="Instagram" />
                 </a>
-                <!-- Botón flotante de WhatsApp con animación de rebote -->
-<a href="https://wa.me/526141986605" 
-   target="_blank" 
-   aria-label="WhatsApp" 
-   class="whatsapp-bounce">
-    <i class="fab fa-whatsapp"></i>
+
+<!-- Botón de WhatsApp -->
+<a href="https://wa.me/526141986605" target="_blank" id="botonWhatsapp"
+   style="background-color:#25D366;
+          color:white;
+          padding:15px 25px;
+          text-decoration:none;
+          border-radius:50px;
+          font-weight:bold;
+          display:inline-block;
+          transition: transform 0.2s;">
+   WhatsApp
 </a>
 
-<!-- Font Awesome para el ícono -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+  const boton = document.getElementById('botonWhatsapp');
 
-<style>
-.whatsapp-bounce {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    text-decoration: none;
-    z-index: 1000;
-    color: white;
-    font-size: 30px;
-    animation: bounce 1s ease;
-}
+  // Function to bounce the button
+  function bounceButton() {
+    boton.style.transform = 'scale(1.2)';
+    setTimeout(() => { boton.style.transform = 'scale(1)'; }, 200);
+  }
 
-@keyframes bounce {
-    0%   { transform: translateY(-100%); }
-    40%  { transform: translateY(10%); }
-    60%  { transform: translateY(-5%); }
-    80%  { transform: translateY(2%); }
-    100% { transform: translateY(0); }
-}
-</style>
+  // Bounce on page load
+  window.addEventListener('load', bounceButton);
+
+  // Bounce every 20 seconds
+  setInterval(bounceButton, 20000);
+
+  // Rastrear clicks en GA4
+  boton.addEventListener('click', () => {
+    gtag('event', 'click', {
+      'event_category': 'Botón',
+      'event_label': 'WhatsApp'
+    });
+  });
+</script>
+                
               </div>
             </div>
           </div>
