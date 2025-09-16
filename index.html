@@ -263,26 +263,33 @@
                   <img src="img/instagram.png" alt="Instagram" />
                 </a>
 
-<!-- Botón de WhatsApp -->
+<!-- WhatsApp Button (in <body>) -->
 <a href="https://wa.me/526141986605" target="_blank" id="botonWhatsapp"
-   style="background-color:#25D366;
-          color:white;
-          padding:15px 25px;
+   style="position:fixed;
+          bottom:20px;
+          right:20px;
+          width:60px;
+          height:60px;
+          background-color:#25D366;
+          border-radius:50%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
           text-decoration:none;
-          border-radius:50px;
-          font-weight:bold;
-          display:inline-block;
-          transition: transform 0.2s;">
-   WhatsApp
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+          transition: transform 0.3s;
+          z-index:1000;">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+        alt="WhatsApp" style="width:35px;height:35px;">
 </a>
 
 <script>
   const boton = document.getElementById('botonWhatsapp');
 
-  // Function to bounce the button
+  // Bounce animation function
   function bounceButton() {
-    boton.style.transform = 'scale(1.2)';
-    setTimeout(() => { boton.style.transform = 'scale(1)'; }, 200);
+    boton.style.transform = 'translateY(-10px)';
+    setTimeout(() => { boton.style.transform = 'translateY(0)'; }, 300);
   }
 
   // Bounce on page load
@@ -291,7 +298,58 @@
   // Bounce every 20 seconds
   setInterval(bounceButton, 20000);
 
-  // Rastrear clicks en GA4
+  // Track clicks in GA4
+  boton.addEventListener('click', () => {
+    gtag('event', 'click', {
+      'event_category': 'Botón',
+      'event_label': 'WhatsApp'
+    });
+  });
+</script><!-- GA4 Global Site Tag (in <head>) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G66KRHQQTT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G66KRHQQTT');
+</script>
+
+<!-- WhatsApp Button (in <body>) -->
+<a href="https://wa.me/526141986605" target="_blank" id="botonWhatsapp"
+   style="position:fixed;
+          bottom:20px;
+          right:20px;
+          width:60px;
+          height:60px;
+          background-color:#25D366;
+          border-radius:50%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          text-decoration:none;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+          transition: transform 0.3s;
+          z-index:1000;">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+        alt="WhatsApp" style="width:35px;height:35px;">
+</a>
+
+<script>
+  const boton = document.getElementById('botonWhatsapp');
+
+  // Bounce animation function
+  function bounceButton() {
+    boton.style.transform = 'translateY(-10px)';
+    setTimeout(() => { boton.style.transform = 'translateY(0)'; }, 300);
+  }
+
+  // Bounce on page load
+  window.addEventListener('load', bounceButton);
+
+  // Bounce every 20 seconds
+  setInterval(bounceButton, 20000);
+
+  // Track clicks in GA4
   boton.addEventListener('click', () => {
     gtag('event', 'click', {
       'event_category': 'Botón',
